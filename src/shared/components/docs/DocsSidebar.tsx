@@ -55,7 +55,7 @@ export default function DocsSidebar({ sections, currentPath, className }: DocsSi
             )}
             <div className="space-y-1">
               {section.children?.map((item, childIdx) => (
-                <Link
+                <Link prefetch={false}
                   key={childIdx}
                   href={item.href}
                   className={cn(

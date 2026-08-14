@@ -977,7 +977,7 @@ export default function RuntimePageClient() {
             title={t("quotaMonitorsTitle")}
             subtitle={t("quotaMonitorsSubtitle")}
             trailing={
-              <Link href="/dashboard/quota" className="text-[11px] text-primary hover:underline">
+              <Link prefetch={false} href="/dashboard/quota" className="text-[11px] text-primary hover:underline">
                 {t("openQuota")} →
               </Link>
             }

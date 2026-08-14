@@ -759,6 +759,7 @@ export default function MediaPageClient() {
               providers: (chunks) => (
                 <Link
                   href="/dashboard/providers"
+                  prefetch={false}
                   className="text-primary underline underline-offset-2 hover:text-primary/80"
                 >
                   {chunks}
@@ -966,6 +967,7 @@ export default function MediaPageClient() {
             {isCredentialsError && (
               <Link
                 href="/dashboard/providers"
+                prefetch={false}
                 className="inline-flex items-center gap-1 mt-2 text-xs text-primary hover:underline"
               >
                 <span className="material-symbols-outlined text-[13px]">open_in_new</span>

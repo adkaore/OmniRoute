@@ -482,7 +482,7 @@ export default function ProviderDetailPageClient() {
     return (
       <div className="text-center py-20">
         <p className="text-text-muted">{t("providerNotFound")}</p>
-        <Link href="/dashboard/providers" className="text-primary mt-4 inline-block">
+        <Link prefetch={false} href="/dashboard/providers" className="text-primary mt-4 inline-block">
           {t("backToProviders")}
         </Link>
       </div>

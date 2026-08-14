@@ -156,7 +156,7 @@ export default function CliproxyapiSettingsTab() {
         <span className="material-symbols-outlined text-[14px] mt-0.5 shrink-0">info</span>
         <span>
           {t("cliproxyapiLifecycleNoticeBefore")}{" "}
-          <Link
+          <Link prefetch={false}
             href="/dashboard/providers/services"
             className="underline underline-offset-2 hover:opacity-80"
           >

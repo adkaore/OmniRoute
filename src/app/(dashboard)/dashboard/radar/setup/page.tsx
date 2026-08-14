@@ -165,6 +165,7 @@ export default function RadarSetupPage() {
       <div className="flex items-center gap-3">
         <Link
           href="/dashboard/radar"
+          prefetch={false}
           className="text-sm text-text-muted hover:text-text-main transition-colors"
         >
           ← {t("backToCatalog")}
@@ -277,6 +278,7 @@ export default function RadarSetupPage() {
               <p className="text-sm text-text-muted">{t("addConnectionDescription")}</p>
               <Link
                 href={`/dashboard/providers?add=${encodeURIComponent(provider)}`}
+                prefetch={false}
                 className="text-violet-400 hover:underline text-sm"
               >
                 {t("addConnectionLink")}

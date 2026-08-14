@@ -35,6 +35,7 @@ export default function ClaudeCcDiscoveryInfoButton() {
           <p className="text-text-muted mb-2">{t("ccDiscoveryInfoTooltip")}</p>
           <Link
             href="/dashboard/settings/feature-flags"
+            prefetch={false}
             className="font-medium text-primary hover:underline"
           >
             {t("ccDiscoveryInfoLink")}

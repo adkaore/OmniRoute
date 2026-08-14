@@ -23,7 +23,7 @@ export default function ModalityBridgeMovedCard() {
       </div>
 
       <div className="mt-4 border-t border-border pt-3 text-sm">
-        <Link href="/dashboard/settings/modality-bridge" className="text-primary hover:underline">
+        <Link prefetch={false} href="/dashboard/settings/modality-bridge" className="text-primary hover:underline">
           {t("modalityBridgeMovedCta")}
         </Link>
       </div>

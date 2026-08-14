@@ -48,7 +48,7 @@ function SummaryRow({
     <div className="flex items-center justify-between gap-3 py-2 text-sm text-text-main">
       <div className="flex items-center gap-2">
         {title}
-        <Link
+        <Link prefetch={false}
           href={href}
           className="rounded border border-border bg-bg-subtle px-1.5 py-0.5 text-[10px] uppercase tracking-wider text-text-muted hover:border-primary/40 hover:text-primary"
         >
@@ -124,7 +124,7 @@ export default function CompressionTokenSaverCard({
         <span className="material-symbols-outlined mt-px text-[16px]">info</span>
         <p>
           Turn these layers on/off and set their level in{" "}
-          <Link href="/dashboard/context/settings" className="text-primary hover:underline">
+          <Link prefetch={false} href="/dashboard/context/settings" className="text-primary hover:underline">
             Compression Settings
           </Link>
           .

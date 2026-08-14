@@ -76,6 +76,7 @@ export default function CliToolCard({
   return (
     <Link
       href={detailHref}
+      prefetch={false}
       className={cn(
         "block min-h-[180px]",
         "bg-surface border border-black/5 dark:border-white/5 rounded-lg shadow-sm",

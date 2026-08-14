@@ -38,7 +38,7 @@ export default function DestinationStep({
         <p className="text-sm text-[var(--color-text-muted)] max-w-sm">
           {t("wizardEmptyProviders")}
         </p>
-        <Link
+        <Link prefetch={false}
           href="/dashboard/providers"
           className="text-sm text-[var(--color-accent)] underline underline-offset-2 hover:opacity-80"
         >

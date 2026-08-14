@@ -26,7 +26,7 @@ export function EmptyStateNoProviders() {
             "To use AgentBridge, first connect at least one provider. It will be the destination where IDE requests are routed."}
         </p>
       </div>
-      <Link
+      <Link prefetch={false}
         href="/dashboard/providers"
         className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white hover:bg-primary/90 transition-colors"
       >

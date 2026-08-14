@@ -42,7 +42,7 @@ export default function Navigation() {
           >
             {t("howItWorks")}
           </a>
-          <Link
+          <Link prefetch={false}
             className="text-gray-300 hover:text-white text-sm font-medium transition-colors"
             href="/docs"
           >
@@ -99,7 +99,7 @@ export default function Navigation() {
             >
               {t("howItWorks")}
             </a>
-            <Link
+            <Link prefetch={false}
               className="text-gray-300 hover:text-white text-sm font-medium transition-colors"
               href="/docs"
               onClick={() => setMobileMenuOpen(false)}

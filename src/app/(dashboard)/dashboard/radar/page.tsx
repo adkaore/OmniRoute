@@ -657,6 +657,7 @@ export default function RadarPage() {
                             {entry.setup?.keyUrl && (
                               <Link
                                 href={`/dashboard/radar/setup?provider=${encodeURIComponent(entry.provider)}`}
+                                prefetch={false}
                                 className="text-xs text-violet-400 hover:underline"
                                 title={t("setupGuide")}
                               >

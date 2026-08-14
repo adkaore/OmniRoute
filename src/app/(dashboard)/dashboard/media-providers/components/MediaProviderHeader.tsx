@@ -31,6 +31,7 @@ export default function MediaProviderHeader({
     <div className="flex flex-col gap-3">
       <Link
         href={backHref}
+        prefetch={false}
         className="inline-flex items-center gap-1.5 text-sm text-text-muted hover:text-text-primary transition-colors w-fit"
       >
         <span className="material-symbols-outlined text-[16px]">arrow_back</span>

@@ -329,7 +329,7 @@ export default function ComboPlaygroundClient() {
           <div className="p-8 text-center">
             <p className="text-text-muted">
               {t("playgroundNoCombosYet")}{" "}
-              <Link href="/dashboard/combos" className="text-primary hover:underline">
+              <Link prefetch={false} href="/dashboard/combos" className="text-primary hover:underline">
                 {t("playgroundCreateFirst")}
               </Link>
               .

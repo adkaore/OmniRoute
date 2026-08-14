@@ -286,6 +286,7 @@ export default function ToolDetailClient({ toolId, category }: ToolDetailClientP
       <div className="flex items-center gap-2">
         <Link
           href={backCategory}
+          prefetch={false}
           className="inline-flex items-center gap-1.5 text-sm text-text-muted hover:text-primary transition-colors"
         >
           <span className="material-symbols-outlined text-[16px]">arrow_back</span>

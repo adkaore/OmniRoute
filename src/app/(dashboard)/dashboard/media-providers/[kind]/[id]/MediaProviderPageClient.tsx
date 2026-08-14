@@ -58,6 +58,7 @@ function renderPlayground(
           <SttExampleCard providerId={providerId} />
           <Link
             href="/dashboard/settings/modality-bridge?tab=audio"
+            prefetch={false}
             className="text-xs text-primary hover:underline"
           >
             {bridgeCopy.sttCta}
@@ -85,6 +86,7 @@ function renderPlayground(
           <p className="text-xs text-text-muted">{bridgeCopy.imageToText.description}</p>
           <Link
             href="/dashboard/settings/modality-bridge?tab=vision"
+            prefetch={false}
             className="text-xs text-primary hover:underline"
           >
             {bridgeCopy.imageToText.cta}

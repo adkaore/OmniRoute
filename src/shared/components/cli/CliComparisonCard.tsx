@@ -52,6 +52,7 @@ export default function CliComparisonCard({ currentType }: CliComparisonCardProp
                 ) : (
                   <Link
                     href={TYPE_HREFS[type]}
+                    prefetch={false}
                     className="inline-flex items-center px-1.5 py-0.5 text-[10px] font-medium rounded-full bg-black/5 dark:bg-white/5 text-text-muted hover:text-primary hover:bg-primary/10 transition-colors whitespace-nowrap"
                   >
                     {t("comparison.open")}

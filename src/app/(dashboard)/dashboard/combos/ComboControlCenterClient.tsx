@@ -306,7 +306,7 @@ export default function ComboControlCenterClient({ comboId }: { comboId: string 
   if (error && !combo) {
     return (
       <div className="space-y-4">
-        <Link href="/dashboard/combos" className="text-sm text-primary hover:underline">
+        <Link href="/dashboard/combos" prefetch={false} className="text-sm text-primary hover:underline">
           ← {t("backToCombos")}
         </Link>
         <Card className="border border-red-500/20 bg-red-500/10 p-6">
@@ -323,7 +323,7 @@ export default function ComboControlCenterClient({ comboId }: { comboId: string 
     <div className="space-y-6">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
         <div>
-          <Link href="/dashboard/combos" className="text-sm text-primary hover:underline">
+          <Link href="/dashboard/combos" prefetch={false} className="text-sm text-primary hover:underline">
             ← {t("backToCombos")}
           </Link>
           <div className="mt-3 flex flex-wrap items-center gap-3">
@@ -353,6 +353,7 @@ export default function ComboControlCenterClient({ comboId }: { comboId: string 
           </button>
           <Link
             href="/dashboard/combos"
+            prefetch={false}
             className="rounded-lg border border-primary/30 bg-primary/10 px-3 py-2 text-sm text-primary transition-colors hover:bg-primary/20"
           >
             {t("editInCombos")}
@@ -548,6 +549,7 @@ export default function ComboControlCenterClient({ comboId }: { comboId: string 
             <Link
               key={href}
               href={href}
+              prefetch={false}
               className="rounded-lg border border-border bg-surface px-3 py-2 text-sm text-text-main transition-colors hover:bg-surface/80"
             >
               {label}

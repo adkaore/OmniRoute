@@ -31,7 +31,7 @@ export default function ForbiddenPage() {
       <p className="text-[15px] text-[var(--text-secondary,#888)] max-w-[400px] leading-relaxed mb-8">
         {t("accessDeniedDescription")}
       </p>
-      <Link
+      <Link prefetch={false}
         href="/dashboard"
         className="px-8 py-3 rounded-[10px] text-white text-sm font-semibold no-underline transition-all duration-200 shadow-[0_4px_16px_rgba(99,102,241,0.3)] hover:-translate-y-0.5"
         style={{

@@ -36,7 +36,7 @@ export function SkillsConceptCard({ variant, className = "" }: SkillsConceptCard
         <div className="flex-1 min-w-0">
           <h3 className="text-sm font-semibold text-text-main">{title}</h3>
         </div>
-        <Link
+        <Link prefetch={false}
           href={crossLinkHref}
           className="shrink-0 flex items-center gap-1 text-xs text-primary hover:text-primary/80 transition-colors whitespace-nowrap"
         >

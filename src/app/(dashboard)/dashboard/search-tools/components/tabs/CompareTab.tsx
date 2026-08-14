@@ -191,7 +191,7 @@ export default function CompareTab({ providers, onMetrics }: CompareTabProps) {
           ⚖
         </span>
         <p className="text-sm text-text-muted mb-2">{t("noActiveProviderDescription")}</p>
-        <Link href="/dashboard/providers" className="text-accent text-sm hover:underline">
+        <Link href="/dashboard/providers" prefetch={false} className="text-accent text-sm hover:underline">
           {t("configureProviders")}
         </Link>
       </div>

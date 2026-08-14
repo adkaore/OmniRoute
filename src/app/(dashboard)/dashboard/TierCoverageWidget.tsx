@@ -98,6 +98,7 @@ export function TierCoverageWidget() {
         </div>
         <Link
           href="/dashboard/providers"
+          prefetch={false}
           className="text-xs text-text-muted hover:text-text-main transition-colors"
         >
           Manage →
@@ -115,6 +116,7 @@ export function TierCoverageWidget() {
             {configured === 0 && (
               <Link
                 href="/dashboard/providers/new"
+                prefetch={false}
                 className="text-xs text-blue-400 underline mt-0.5 block"
               >
                 {t("add")}

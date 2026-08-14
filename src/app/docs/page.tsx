@@ -90,7 +90,7 @@ export default async function DocsHomePage() {
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-16">
         {featuredLinks.map((link) => (
-          <Link
+          <Link prefetch={false}
             key={link.href}
             href={link.href}
             className="flex flex-col items-center text-center p-6 bg-fd-card border border-fd-border rounded-xl
@@ -131,7 +131,7 @@ export default async function DocsHomePage() {
               <ul className="space-y-2.5">
                 {sectionPages.map((page) => (
                   <li key={page.url}>
-                    <Link
+                    <Link prefetch={false}
                       href={page.url}
                       className="text-sm text-fd-muted-foreground hover:text-fd-primary transition-colors"
                     >

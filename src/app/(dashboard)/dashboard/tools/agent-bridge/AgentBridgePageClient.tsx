@@ -325,14 +325,14 @@ export default function AgentBridgePageClient({
               {t("quickLinks")}
             </h3>
             <div className="flex flex-wrap gap-3">
-              <Link
+              <Link prefetch={false}
                 href="/dashboard/providers"
                 className="inline-flex items-center gap-1.5 text-sm text-primary hover:underline"
               >
                 <span className="material-symbols-outlined text-[14px]">dns</span>
                 {t("quickLinkProviders")}
               </Link>
-              <Link
+              <Link prefetch={false}
                 href="/dashboard/tools/traffic-inspector"
                 className="inline-flex items-center gap-1.5 text-sm text-primary hover:underline"
               >

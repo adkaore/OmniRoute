@@ -104,7 +104,7 @@ function mergeUpdateStep(steps: UpdateStep[], nextStep: UpdateStep) {
   return next;
 }
 
-// Quick-start link classes, extracted so each <Link> still fits on one line with
+// Quick-start link classes, extracted so each <Link prefetch={false}> still fits on one line with
 // prefetch={false} (#8281) — this file is size-frozen.
 const INLINE_LINK = "text-primary hover:underline";
 const DOCS_LINK =

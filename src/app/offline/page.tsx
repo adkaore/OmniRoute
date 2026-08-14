@@ -53,7 +53,7 @@ export default function OfflinePage() {
           >
             {t("offline.retryConnection")}
           </button>
-          <Link
+          <Link prefetch={false}
             href="/status"
             className="inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm font-semibold border border-border hover:bg-bg-alt transition-colors duration-200 motion-reduce:transition-none"
           >

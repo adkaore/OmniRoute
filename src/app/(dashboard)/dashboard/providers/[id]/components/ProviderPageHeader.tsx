@@ -84,7 +84,7 @@ export default function ProviderPageHeader({
 
   return (
     <div>
-      <Link
+      <Link prefetch={false}
         href="/dashboard/providers"
         className="inline-flex items-center gap-1 text-sm text-text-muted hover:text-primary transition-colors mb-4"
       >

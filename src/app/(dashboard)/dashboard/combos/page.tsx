@@ -1785,6 +1785,7 @@ function ComboCardInner({
             )}
             <Link
               href={`/dashboard/combos/${combo.id}`}
+              prefetch={false}
               onClick={(e) => e.stopPropagation()}
               className="p-1.5 hover:bg-black/5 dark:hover:bg-white/5 rounded text-text-muted hover:text-primary transition-colors"
               title={getI18nOrFallback(t, "controlCenter", "Control Center")}

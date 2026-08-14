@@ -226,6 +226,7 @@ export default function ResultsPanel({
           <p className="text-sm text-text-muted mb-2">{t("noActiveProvider")}</p>
           <Link
             href="/dashboard/providers"
+            prefetch={false}
             className="text-accent text-sm hover:underline font-medium"
             data-testid="configure-providers-link"
           >

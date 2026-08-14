@@ -196,7 +196,7 @@ export default function AgentsPage() {
             </div>
             <h3 className="text-lg font-semibold">{t("setupGuideTitle")}</h3>
           </div>
-          <Link
+          <Link prefetch={false}
             href="/dashboard/cli-code"
             className="text-xs px-2.5 py-1.5 rounded-lg border border-border/60 hover:bg-surface/40 transition-colors"
           >
@@ -232,7 +232,7 @@ export default function AgentsPage() {
           <span className="material-symbols-outlined text-[14px] text-text-muted">fingerprint</span>
           <p className="text-xs text-text-muted">
             {t("fingerprintSettingsHint")}{" "}
-            <Link href="/dashboard/settings?tab=routing" className="text-primary hover:underline">
+            <Link prefetch={false} href="/dashboard/settings?tab=routing" className="text-primary hover:underline">
               {t("settingsRoutingLink")}
             </Link>
           </p>

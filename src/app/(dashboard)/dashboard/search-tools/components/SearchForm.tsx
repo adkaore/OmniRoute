@@ -173,6 +173,7 @@ export default function SearchForm({ onSearch, loading, onCancel, providers, cat
                 {catalogInfo.status === "missing" && (
                   <Link
                     href={catalogInfo.configureHref}
+                    prefetch={false}
                     className="text-accent hover:underline"
                   >
                     Configure →

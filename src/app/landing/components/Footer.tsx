@@ -62,7 +62,7 @@ export default function Footer() {
           {/* Resources */}
           <div className="flex flex-col gap-4">
             <h4 className="font-bold text-white">{t("resources")}</h4>
-            <Link
+            <Link prefetch={false}
               className="text-gray-400 hover:text-[#E54D5E] text-sm transition-colors"
               href="/docs"
             >

@@ -104,13 +104,13 @@ export default function StatusPage() {
             </h2>
             <p className="mt-2 text-sm text-text-muted">{error}</p>
             <div className="mt-4 flex flex-wrap gap-2">
-              <Link
+              <Link prefetch={false}
                 href="/offline"
                 className="px-3 py-2 rounded-lg border border-border text-sm font-medium hover:bg-bg-alt transition-colors"
               >
                 {t("status.openConnectivityHelp")}
               </Link>
-              <Link
+              <Link prefetch={false}
                 href="/maintenance"
                 className="px-3 py-2 rounded-lg border border-border text-sm font-medium hover:bg-bg-alt transition-colors"
               >

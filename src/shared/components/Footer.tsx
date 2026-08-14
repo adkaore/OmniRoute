@@ -53,7 +53,7 @@ export default function Footer() {
       );
     }
     return (
-      <Link href={link.href} className="hover:text-primary transition-colors">
+      <Link prefetch={false} href={link.href} className="hover:text-primary transition-colors">
         {link.label}
       </Link>
     );
@@ -142,13 +142,13 @@ export default function Footer() {
             {t("copyright", { year: new Date().getFullYear() })}
           </p>
           <div className="flex gap-6 text-sm text-text-muted">
-            <Link href="/docs" className="hover:text-primary transition-colors">
+            <Link prefetch={false} href="/docs" className="hover:text-primary transition-colors">
               {t("documentation")}
             </Link>
-            <Link href="/terms" className="hover:text-primary transition-colors">
+            <Link prefetch={false} href="/terms" className="hover:text-primary transition-colors">
               {t("terms")}
             </Link>
-            <Link href="/privacy" className="hover:text-primary transition-colors">
+            <Link prefetch={false} href="/privacy" className="hover:text-primary transition-colors">
               {t("privacy")}
             </Link>
             <a

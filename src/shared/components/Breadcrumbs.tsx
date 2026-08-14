@@ -160,6 +160,7 @@ export default function Breadcrumbs() {
           ) : (
             <Link
               href={crumb.href}
+              prefetch={false}
               style={{
                 color: "var(--text-secondary, #888)",
                 textDecoration: "none",

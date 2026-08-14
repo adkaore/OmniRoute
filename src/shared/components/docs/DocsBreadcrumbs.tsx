@@ -28,7 +28,7 @@ export default function DocsBreadcrumbs({ labels, className }: DocsBreadcrumbsPr
       aria-label={t("breadcrumb")}
       className={cn("flex items-center gap-2 text-sm text-text-muted mb-6", className)}
     >
-      <Link href="/" className="hover:text-text-main transition-colors">
+      <Link prefetch={false} href="/" className="hover:text-text-main transition-colors">
         {t("docsLabel")}
       </Link>
       {crumbs.map((crumb, i) => (
@@ -37,7 +37,7 @@ export default function DocsBreadcrumbs({ labels, className }: DocsBreadcrumbsPr
           {crumb.isLast ? (
             <span className="font-medium text-text-primary">{crumb.label}</span>
           ) : (
-            <Link href={crumb.href} className="hover:text-text-main transition-colors">
+            <Link prefetch={false} href={crumb.href} className="hover:text-text-main transition-colors">
               {crumb.label}
             </Link>
           )}

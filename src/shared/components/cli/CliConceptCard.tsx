@@ -46,6 +46,7 @@ export default function CliConceptCard({ currentType }: CliConceptCardProps) {
               <Link
                 key={type}
                 href={TYPE_HREFS[type]}
+                prefetch={false}
                 className="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-medium rounded-full bg-black/5 dark:bg-white/5 text-text-muted hover:text-primary hover:bg-primary/10 transition-colors"
               >
                 {t(`concept.${type}.title`)} — {t(`concept.${type}.seeOther`)}

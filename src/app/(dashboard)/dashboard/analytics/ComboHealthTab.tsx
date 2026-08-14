@@ -340,6 +340,7 @@ function ComboAutopilotPanel({ report }: { report: ComboAutopilotReport }) {
                         <Link
                           key={`${issue.id}-${action.type}`}
                           href={action.href}
+                          prefetch={false}
                           className="inline-flex items-center gap-1.5 rounded-lg border border-black/5 px-3 py-1.5 text-xs font-medium text-text-main transition-colors hover:bg-black/5 dark:border-white/5 dark:hover:bg-white/5"
                         >
                           <span className="material-symbols-outlined text-[14px]">

@@ -212,6 +212,7 @@ export default function CliCodePageClient({ machineId: _machineId }: CliCodePage
             </p>
             <Link
               href="/dashboard/providers"
+              prefetch={false}
               className="inline-flex items-center gap-1 mt-2 text-xs text-primary font-medium hover:underline"
             >
               {tCommon("detail.openProviders")}
