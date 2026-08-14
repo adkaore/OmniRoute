@@ -182,7 +182,7 @@ ENV HOSTNAME=0.0.0.0
 # `-e OMNIROUTE_MEMORY_MB=2048` (or higher) if you raise fusionTuning.maxPanel
 # above the default cap.
 ENV OMNIROUTE_MEMORY_MB=256
-ENV NODE_OPTIONS="--max-old-space-size=256 --optimize-for-size"
+ENV NODE_OPTIONS="--max-old-space-size=256"
 
 # Data directory inside Docker — must match the volume mount in docker-compose.yml
 ENV DATA_DIR=/app/data
