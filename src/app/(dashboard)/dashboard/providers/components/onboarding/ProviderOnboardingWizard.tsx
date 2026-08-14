@@ -289,6 +289,7 @@ function ResultSummary({
               detailsHref && (
                 <Link
                   href={detailsHref}
+                  prefetch={false}
                   className="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary/90"
                 >
                   {providerText(t, "onboardingOpenProviderDetails", "Open provider details")}
@@ -298,12 +299,14 @@ function ResultSummary({
           })()}
           <Link
             href="/dashboard/providers"
+            prefetch={false}
             className="inline-flex items-center justify-center rounded-lg border border-border bg-bg-subtle px-4 py-2 text-sm font-medium text-text-main transition-colors hover:bg-bg-card"
           >
             {providerText(t, "backToProviders", "Back to providers")}
           </Link>
           <Link
             href="/dashboard/playground"
+            prefetch={false}
             className="inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium text-text-muted transition-colors hover:bg-bg-subtle hover:text-text-main"
           >
             {providerText(t, "onboardingTryInPlayground", "Try in playground")}

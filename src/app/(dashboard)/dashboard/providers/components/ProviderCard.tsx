@@ -363,6 +363,7 @@ const ProviderCard = forwardRef<ProviderCardHandle, ProviderCardProps>(function 
       <Link
         ref={linkElementRef}
         href={`/dashboard/providers/${providerId}`}
+        prefetch={false}
         className="group flex-1 flex flex-col focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/60"
         onClick={handleCardClick}
       >
