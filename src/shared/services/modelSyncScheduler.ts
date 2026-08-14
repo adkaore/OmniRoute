@@ -233,13 +233,19 @@ async function runSyncCycle(apiBaseUrl: string): Promise<void> {
       return;
     }
 
-    console.log(`[ModelSync] Starting model sync cycle — ${connections.length} connection(s)`);
+    console.log(`[ModelSync] Starting model sync cycle — ${connections.length} connection(s) (sequential)`);
 
-    const results = await Promise.allSettled(
-      connections.map((conn) =>
-        syncConnectionModels(conn.id, conn.name || conn.provider, apiBaseUrl)
-      )
-    );
+    const results: PromiseSettledResult<boolean>[] = [];
+    for (const conn of connections) {
+      try {
+        const ok = await syncConnectionModels(conn.id, conn.provider, apiBaseUrl);
+        results.push({ status: "fulfilled", value: ok });
+      } catch (err) {
+        results.push({ status: "rejected", reason: err });
+      }
+      // Stagger requests by 500ms to keep memory and loopback traffic minimal
+      await new Promise((r) => setTimeout(r, 500));
+    }
 
     const succeeded = results.filter((r) => r.status === "fulfilled" && r.value === true).length;
     console.log(

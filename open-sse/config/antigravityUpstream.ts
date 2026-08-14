@@ -1,6 +1,6 @@
 export const ANTIGRAVITY_RUNTIME_BASE_URLS = Object.freeze([
-  "https://daily-cloudcode-pa.googleapis.com",
   "https://cloudcode-pa.googleapis.com",
+  "https://daily-cloudcode-pa.googleapis.com",
 ]);
 
 export const ANTIGRAVITY_DISCOVERY_BASE_URLS = Object.freeze([

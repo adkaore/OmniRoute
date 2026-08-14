@@ -181,8 +181,8 @@ ENV HOSTNAME=0.0.0.0
 # .maxPanel, issue #1905). Override at `docker run` time with
 # `-e OMNIROUTE_MEMORY_MB=2048` (or higher) if you raise fusionTuning.maxPanel
 # above the default cap.
-ENV OMNIROUTE_MEMORY_MB=350
-ENV NODE_OPTIONS="--max-old-space-size=350 --expose-gc"
+ENV OMNIROUTE_MEMORY_MB=400
+ENV NODE_OPTIONS="--max-old-space-size=400 --expose-gc"
 
 # Data directory inside Docker — must match the volume mount in docker-compose.yml
 ENV DATA_DIR=/app/data
@@ -222,7 +222,7 @@ ENTRYPOINT ["/app/check-permissions.sh"]
 HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
   CMD ["node", "healthcheck.mjs"]
 
-CMD ["node", "--max-old-space-size=350", "--expose-gc", "scripts/ops/start-with-remote-env-and-backup.mjs"]
+CMD ["node", "--max-old-space-size=400", "--expose-gc", "scripts/ops/start-with-remote-env-and-backup.mjs"]
 
 # ── Runner Web (web-cookie providers: Gemini Web, Claude Turnstile) ───────────
 #

@@ -143,6 +143,11 @@ export const ANTIGRAVITY_PUBLIC_MODELS = Object.freeze([
 ]);
 
 export const ANTIGRAVITY_MODEL_ALIASES = Object.freeze({
+  "gemini-3.7-flash-high": "gemini-3.6-flash-high",
+  "gemini-3.7-flash": "gemini-3.6-flash-high",
+  "gemini-3.7-flash-low": "gemini-3.6-flash-low",
+  "gemini-3.7-pro-high": "gemini-pro-agent",
+  "gemini-3.7-pro": "gemini-pro-agent",
   // gemini-3.1-pro-low is not aliased: the upstream accepts it verbatim.
   // gemini-3.1-pro-high: the discovery slot returns HTTP 400 on v1internal;
   // the live upstream id is gemini-pro-agent (see ANTIGRAVITY_PUBLIC_MODELS).
