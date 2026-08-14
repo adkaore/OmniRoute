@@ -296,6 +296,8 @@ function cleanupQuotaSnapshots() {
   try {
     const db = new Database(dbPath);
     try {
+      db.pragma("wal_checkpoint(TRUNCATE)");
+      db.pragma("cache_size = -16384");
       const table = db
         .prepare("SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'quota_snapshots'")
         .get();
@@ -306,6 +308,7 @@ function cleanupQuotaSnapshots() {
           log(`quota_snapshots cleanup removed ${deleted.changes} row(s) older than 8 days`);
         }
       }
+      db.pragma("optimize");
     } finally {
       db.close();
     }
