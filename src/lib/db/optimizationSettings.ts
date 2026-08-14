@@ -146,7 +146,10 @@ function readDatabaseOptimizationSettings(db: SqliteDatabase): DatabaseOptimizat
 }
 
 export function setCacheSizeForDb(db: SqliteDatabase, cacheSizeKb: number): void {
-  const normalizedCacheSizeKb = requireCacheSizeKb(cacheSizeKb);
+  let normalizedCacheSizeKb = requireCacheSizeKb(cacheSizeKb);
+  if (process.env.OMNIROUTE_MEMORY_MB && Number(process.env.OMNIROUTE_MEMORY_MB) <= 512) {
+    normalizedCacheSizeKb = Math.min(normalizedCacheSizeKb, 8192);
+  }
   const currentCacheSize = db.pragma("cache_size", { simple: true }) as number;
   const targetCacheSize = -normalizedCacheSizeKb;
 

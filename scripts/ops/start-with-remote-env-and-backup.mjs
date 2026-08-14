@@ -441,6 +441,19 @@ function startPeriodicBackup() {
   initialTimeout.unref?.();
 }
 
+function startIdleGcWatcher() {
+  if (typeof global.gc !== "function") return;
+  const gcTimer = setInterval(() => {
+    try {
+      const memory = process.memoryUsage();
+      if (memory.heapUsed > 220 * 1024 * 1024) {
+        global.gc();
+      }
+    } catch {}
+  }, 30000);
+  gcTimer.unref?.();
+}
+
 let isShuttingDown = false;
 
 async function handleShutdown(signal) {
@@ -501,6 +514,7 @@ process.env.OMNIROUTE_PORT = port;
 process.env.HOSTNAME = process.env.HOSTNAME || "0.0.0.0";
 
 cleanupQuotaSnapshots();
+startIdleGcWatcher();
 startPeriodicBackup();
 
 const serverEntry = findServerEntry();
