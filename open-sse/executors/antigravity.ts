@@ -554,46 +554,7 @@ export class AntigravityExecutor extends BaseExecutor {
       }
     }
 
-    if (!projectId) {
-      markAntigravityMissingCloudCodeProject(credentials?.connectionId);
-      // (#489) Return a structured error instead of throwing — gives the client a clear signal
-      // to show a "Reconnect OAuth" prompt rather than an opaque "Internal Server Error".
-      const errorMsg =
-        "Missing Google projectId for Antigravity account. Auto-discovery via loadCodeAssist " +
-        "found no Cloud Code project. Please reconnect OAuth in Providers → Antigravity (and " +
-        "ensure the Google account has completed Gemini Code Assist onboarding).";
-      const errorBody = {
-        error: {
-          message: errorMsg,
-          type: "oauth_missing_project_id",
-          code: "missing_project_id",
-        },
-      };
-      const resp = new Response(JSON.stringify(errorBody), {
-        status: 422,
-        headers: { "Content-Type": "application/json" },
-      });
-      // Returning a Response object signals the executor to stop and forward it
-      return resp as unknown as never;
-    }
-
-    // Validate projectId is non-empty and not just whitespace
-    const trimmedProjectId = typeof projectId === "string" ? projectId.trim() : projectId;
-    if (!trimmedProjectId) {
-      const resp = new Response(
-        JSON.stringify({
-          error: {
-            message:
-              "Invalid (empty) Google projectId for Antigravity account. " +
-              "Please reconnect OAuth in Providers → Antigravity.",
-            type: "oauth_missing_project_id",
-            code: "missing_project_id",
-          },
-        }),
-        { status: 422, headers: { "Content-Type": "application/json" } }
-      );
-      return resp as unknown as never;
-    }
+    const trimmedProjectId = typeof projectId === "string" ? projectId.trim() : (projectId ?? "");
 
     const upstreamModel = await cleanModelName(model, modelIdOverride);
     const isClaude = upstreamModel.toLowerCase().includes("claude");

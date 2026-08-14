@@ -56,15 +56,7 @@ export async function handleGoogleFlowVideoGeneration({
     };
   }
 
-  const projectId = resolveFlowProjectId(credentials);
-  if (!projectId) {
-    return {
-      success: false,
-      status: 400,
-      error:
-        "Missing Google projectId for Google Flow. Please reconnect OAuth in Providers so OmniRoute can fetch your Cloud Code project.",
-    };
-  }
+  const projectId = resolveFlowProjectId(credentials) || "";
 
   const params = normalizeFlowVideoParams(body);
   const submitBody = buildGoogleFlowSubmitBody(params);

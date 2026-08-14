@@ -885,20 +885,10 @@ async function handleGeminiImageGeneration({ model, providerConfig, body, creden
     n: candidateCount,
   };
 
-  if (!projectId || typeof projectId !== "string") {
-    return saveImageErrorResult({
-      provider,
-      model,
-      status: 400,
-      startTime,
-      error:
-        "Missing Google projectId for Antigravity account. Please reconnect OAuth in Providers so OmniRoute can fetch your Cloud Code project.",
-      requestBody: logRequestBody,
-    });
-  }
+  const finalProjectId = typeof projectId === "string" ? projectId.trim() : (projectId ?? "");
 
   const antigravityBody = {
-    project: projectId,
+    project: finalProjectId,
     requestId: `image_gen/${Date.now()}/${randomUUID()}/0`,
     request: {
       contents: [
