@@ -244,6 +244,16 @@ const EXTRA_MODULE_ENTRIES = [
     src: ["scripts", "dev", "healthcheck.mjs"],
     dest: ["healthcheck.mjs"],
   },
+  {
+    label: "ops start-with-remote-env-and-backup script",
+    src: ["scripts", "ops", "start-with-remote-env-and-backup.mjs"],
+    dest: ["scripts", "ops", "start-with-remote-env-and-backup.mjs"],
+  },
+  {
+    label: "ops backup-db-to-github script",
+    src: ["scripts", "ops", "backup-db-to-github.mjs"],
+    dest: ["scripts", "ops", "backup-db-to-github.mjs"],
+  },
   { label: "public directory", src: ["public"], dest: ["public"] },
   {
     label: "playwright-core (dynamic import by gemini-web executor)",
